@@ -55,6 +55,9 @@ var di = function() {
     }
     return instance;
   }
+  this.clear = function() {
+    that.components = {};
+  }
 };
 
 exports = module.exports = new di();
