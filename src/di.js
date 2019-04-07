@@ -1,6 +1,7 @@
-var debug = function(message) { console.log(message); };
+//var debug = function(message) { console.log(message); };
+var debug = function(message) {  };
 
-var di = function() {
+var di = function(debug) {
   var that = this;
   var components = {};
 
