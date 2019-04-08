@@ -2,5 +2,5 @@
   "name": "RealDI",
   "version": "0.0.1",
   "description": "Autofac like dependency injection for NodeJS",
-  "main": "./src/di.js",
+  "main": "./src/di.js"
 }

@@ -1,7 +1,6 @@
-//var debug = function(message) { console.log(message); };
-var debug = function(message) {  };
-
-var di = function(debug) {
+var di = function(require) {
+  //var debug = function(message) {  };
+  var debug = function(message) { console.log(message); };
   var that = this;
   var components = {};
 
@@ -14,10 +13,12 @@ var di = function(debug) {
         mode: "constructor"
       } : options
     }
+
     debug('registering ' + uid + ' with ' + component.dependencies);
   }
 
   this.registerAndWrap = function(uid, path, options) {
+    debug(__dirname + path);
     components[uid] = {
       dependencies: [],
       component: {
@@ -25,6 +26,7 @@ var di = function(debug) {
       },
       options: options,
     };
+
     debug('registering and wrapping: ' + uid);
   }
   var singleInstances = {};
@@ -61,4 +63,4 @@ var di = function(debug) {
   }
 };
 
-exports = module.exports = new di();
+exports = module.exports = di;
